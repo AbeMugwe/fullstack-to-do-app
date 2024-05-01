@@ -36,7 +36,7 @@ def update(request,id):
         serializer=TodoSerializer(task)
         return Response(serializer.data)
     
-@api_view(['DELETE'])
+@api_view(['GET'])
 def delete(request,id):
     task=get_object_or_404(Todoapp,pk=id)
     task.delete()
